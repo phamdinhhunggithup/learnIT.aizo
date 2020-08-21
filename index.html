@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/reset.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/effect.css">
+    <link rel="stylesheet" href="./public/font-awesome/css/font-awesome.min.css">
+    <script src="./public/js/vue.js"></script>
+    <title>web.aizo.phamdinhhung</title>
+</head>
+
+<body>
+    <div id="site">
+        <div class="background-Inner-1" v-bind:class="{ open : pageSelected === 1 }">
+            <div class="container">
+                <div class="loader">
+                    <div class="l _1" style="--index: 0"></div>
+                    <div class="l _2" style="--index: 1"></div>
+                    <div class="l _3" style="--index: 2"></div>
+                    <div class="l _4" style="--index: 3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="background-Inner-2" v-bind:class="{ open : pageSelected === 2 }">
+            <div class="container">
+                <div class="introAbout" v-bind:class="{ open : openBackGroundInfoMySelf }">
+                    <div class="box-IntroWrapper" v-bind:class="{ open : openInfoMySelf }">
+                        <div class="box-intro intro-1" v-bind:class="{ slider : boxInfoIndex === 1 }">
+                            <div class="box-title">Xin chào bạn .!</div>
+                            <div class="box-content">
+                                <p class="txt-question">Bạn đã biết mình chưa nhỉ ?</p>
+                                <div class="button-answer">
+                                    <button class="yes" v-on:click="nextIntro(3)">Tớ biết rồi !</button>
+                                    <button class="no" v-on:click="nextIntro(2)">Chưa cậu ơi !</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-intro intro-2" v-bind:class="{ slider : boxInfoIndex === 2 }">
+                            <div class="box-title">Mình là Phạm Đình Hùng .!</div>
+                            <div class="box-content">
+                                <p class="txt-info"><span class="title">Sinh viên trường: </span><span class="value">Cao Đẳng FPT Polytechnic .!</span></p>
+                                <p class="txt-info"><span class="title">Facebook: </span><a href="https://www.facebook.com/0pham7dinh1hung1/" title="Click vào để đến fb của mình .!" class="value">fb/phamdinhhung</a> .!</p>
+                                <p class="txt-info"><span class="title">Zalo: </span><a href="tel:0385763717">038 - 5763 - 717</a></p>
+                                <p class="txt-info"><span class="title">Số điện thoại: </span><a href="tel:0385763717" title="Click vào để gọi ngay .!" class="value">038 - 5763 - 717</a></p>
+                                <p class="txt-info"><span class="title">Skill myself FONT-END:</span> <span class="value">Javascript, jquery, vueJS, HTML5, CSS3, SCSS, BEM, bootstrap, responsive...</span></p>
+                                <p class="txt-info"><span class="title">Skill myself BACK-END:</span> <span class="value"> PHP, MySQL, GIT-HUB..</span>.</p>
+                            </div>
+                            <div class="next-intro">
+                                <button class="next-introButton" v-on:click="nextIntro(3)">Tiếp theo >></button>
+                            </div>
+                        </div>
+                        <div class="box-intro intro-3" v-bind:class="{ slider : boxInfoIndex === 3 }">
+                            <div class="box-title">Đây là trang website giới thiệu cơ bản về khóa học online mà mình xây dựng .!</div>
+                            <div class="box-content">
+                                <p class="txt-info"><span class="_title">(+) </span>Khóa học này sẽ giúp các bạn biết cách nhận biết được đẹp và xấu .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Phân tích thư mục chuyên nghiệp, và cách để load trang web nhanh nhất .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Cơ bản và chuyên sâu và html, css, animation với css3, responsive, bootstrap .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Xây dựng website bằng Photoshop và cách lấy dữ liệu, cắt giao diện từ Photoshop .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Làm quen với ngôn ngữ lập trình Javascript .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>JQuery sử lý sự kiện, và làm hiệu ứng cơ bản và nâng cao .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Cách sử dụng một số plugin giúp trang web trở nên xuất sắc .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Cách đăng ký tên miền(domain) và hosting cho website .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>CÁCH TRIỄN KHAI WEBSITE LÊN MẠNG INTERNET MIỄN PHÍ CHO MỌI NGƯỜI SỬ DỤNG</p>
+                            </div>
+                            <div class="next-intro">
+                                <button class="next-introButton" v-on:click="nextIntro(4)">Tiếp theo >></button>
+                            </div>
+                        </div>
+                        <div class="box-intro intro-4" v-bind:class="{ slider : boxInfoIndex === 4 }">
+                            <div class="box-title">Những thứ tôi cam đoan bạn sẽ nhận được khi kết thúc khóa học .!</div>
+                            <div class="box-content">
+                                <p class="txt-info"><span class="_title">(+) </span>Khả năng phân tích, thiết kế layout .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Khả năng phân tích thuật toán xử lý hiệu ứng .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Khả năng tự tìm kiếm thông tin và tự học .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Khả năng thiết kế photoshop và sở hữu một bản design Photoshop do tự bản thân thiết kế .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Một trang website mà mình sẽ hướng dẫn các bạn .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Có khả năng mua và sử dụng tên miền cho riêng bản thân .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Có khả năng sử dụng git-hub để quản lý dự án .!</p>
+                                <p class="txt-info"><span class="_title">(+) </span>Một trang website do các bạn tự thiết kế dựa trên bản photoshop của các bạn .!</p>
+                            </div>
+                            <div class="next-intro">
+                                <button class="open-info-Course" v-on:click="nextIntro('readDone')">Chi tiết khóa học >></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="infoMysefl">
+                    <h1 class="text">{{ textInfo }}</h1>
+                </div>
+                <div class="steamContainer">
+                    <div class="steam1"></div>
+                    <div class="steams">
+                        <div class="steam2"></div>
+                        <div class="bubble2"></div>
+                    </div>
+                    <div class="steams">
+                        <div class="steam3"></div>
+                        <div class="bubble3"></div>
+                    </div>
+                    <div class="steam4"></div>
+                    <div class="steams">
+                        <div class="steam5"></div>
+                        <div class="bubble5"></div>
+                    </div>
+                </div>
+                <div class="cup"></div>
+                <div class="halfCup"></div>
+                <div class="handle"></div>
+                <div class="coaster"></div>
+            </div>
+        </div>
+        <div class="background-Inner-3" v-bind:class="{ open : pageSelected === 3 }">
+            <div class="container">
+                <div class="list-Info-course">
+                    <div class="introCourseItem">
+                        <div class="courseInner">
+                            <div class="titleCourse">
+                                <h4>Khóa học này cần thiết và có thể giúp đỡ được những ai .!</h4>
+                            </div>
+                            <div class="contentCourse">
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Khóa học online này dành cho những bạn mới học lập trình website</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Những bạn đã từng học qua nhưng chưa thực sự tự tin về khả năng của bản thân</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Những bạn đã học cơ bản và muốn nâng cao trình độ của mình</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Những bạn đang học mò mẫm, và muốn có một lộ trình cụ thể để kiếm thật nhiều tiền trong ngành lập trình</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Những bạn muốn tìm kiếm thêm nhiều điều mới mẻ trong ngành lập trình</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="introCourseItem">
+                        <div class="courseInner">
+                            <div class="titleCourse">
+                                <h4>Những sản phẩm bạn sẽ nhận được khi kết thúc khóa học .!</h4>
+                            </div>
+                            <div class="contentCourse">
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Có một website tuyệt vời cho riêng bạn và do chính bạn tạo ra </span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Có một bản thiết kết photoshop đỉnh cao do chính tay bạn tạo ra</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Có một website chất lượng cho chính mình hướng dẫn các bạn tạo ra</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Có những bản thiết kết photoshop do mình tặng các bạn</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Bạn sẽ nhận được những kiến thức và khả năng tuyệt vời</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Bạn sẽ biết được cách để phân tích một layout website chuyên nghiệp</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Bạn sẽ biết được cách thiết kết photoshop và lấy dữ liệu từ photoshop để thiết kế giao diện</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Bạn sẽ biết được khả năng phân bổ màu sắc cho trang web</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Biết cách check list công việc cụ thể để tạo ra một website</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Có khả năng mua và quản lý domain cùng hosting cho website</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Khả năng quản lý sourse code trên github</span>
+                                </p>
+                                <p>
+                                    <span class="key">(+) </span>
+                                    <span class="value">Khả năng quản lý và bố trí thư mục chuyên nghiệp</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="introCourseItem">
+                        <div class="courseInner">
+                            <div class="titleCourse">
+                                <h4>Nội dung chi tiết về từng bài học trong khóa .!</h4>
+                            </div>
+                            <div class="contentCourse">
+                                <p>
+                                    <span class="key">Phần 1: </span>
+                                    <span class="value">Giới thiệu về khóa học, định hướng nghề nghiệp</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 2: </span>
+                                    <span class="value">Cơ bản về html, css</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 3: </span>
+                                    <span class="value">Nâng cao về html5, css3 và làm quen với tạo hiệu ứng bằng css3</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 4: </span>
+                                    <span class="value">Sử dụng photoshop để thiết kết layout</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 5: </span>
+                                    <span class="value">Sử dụng photoshop để lấy dữ liệu thiết kế website</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 6: </span>
+                                    <span class="value">Đồ án 1 ( đồ án mình hướng dẫn các bạn thực hiện )</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 7: </span>
+                                    <span class="value">Sử dụng github để triễn khai trang web lên mạng Internet miễn phí - Cách mua tên miền (domain) và hosting để triễn khai trang web lên mạng Internet</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 8: </span>
+                                    <span class="value">Sử dụng responsive để thiết kế website chạy trên đa thiết bị</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 9: </span>
+                                    <span class="value">Cơ bản về Javascript</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 10: </span>
+                                    <span class="value">Học về jquery</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 11: </span>
+                                    <span value="value">Kết hợp jquery vào đồ án đã làm ở phần 6</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 12: </span>
+                                    <span value="value">Thiết kế photoshop cho đồ án riêng cá nhân</span>
+                                </p>
+                                <p>
+                                    <span class="key">Phần 13: </span>
+                                    <span value="value">Tự xây dựng trang web cho riêng từng cá nhân</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="introCourseItem">
+                        <div class="courseInner">
+                            <div class="titleCourse">
+                                <h4>Giá của khóa học .!</h4>
+                            </div>
+                            <div class="contentCourse money">
+                                <p>
+                                    <span class="price-curr">Giá gốc: 800.000 VNĐ</span>
+                                    <span class="discount">Giảm 20% cho những bạn đăng ký trước này 30-8-2020</span>
+                                    <span class="price-discount">Còn lại: 640.000 VND</span>
+                                    <span class="note">(Sau thời gian giảm giá sẽ qua về lại giá ban đầu là 800.000 VNĐ)</span>
+                                </p>
+                                <p>
+                                    <span class="highlight">- <strong>Miễn phí</strong> 50% học phí cho bạn đạt được <strong>ÔNG VÀNG</strong> </span>
+                                    <span class="highlight">- Giảm 20% học phí cho bạn nào đạt thành tích xuất sắc</span>
+                                    <span class="highlight">- Giảm 10% học phí cho bạn nào đạt thành tích loại giỏi</span>
+                                    <div class="regisInner">
+                                        <a href="https://www.facebook.com/messages/t/0pham7dinh1hung1" class="registerCourse">Nhấn vào đây để đăng ký ngay .!</a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./public/js/app.js"></script>
+</html>

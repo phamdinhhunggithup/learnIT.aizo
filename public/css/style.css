@@ -1,0 +1,88 @@
+:root {
+    --duration-page-1 : .75s;
+    --duration-page-2 : .75s;
+    --duration-page-3 : .75s;
+}
+
+.background-Inner-1,
+.background-Inner-2,
+.background-Inner-3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.background-Inner-1 {
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all var(--duration-page-1);
+}
+.background-Inner-1.open {
+    transform: translateY(0);
+    transition: all var(--duration-page-1);
+}
+
+.background-Inner-2 {
+    z-index: 2;
+    transform: translateY(-100%);
+    transition: all var(--duration-page-2);
+}
+.background-Inner-2.open {
+    transform: translateY(0);
+    transition: all var(--duration-page-2);
+}
+
+.background-Inner-2 .introAbout {
+    transform: skewX(80deg) scale(.2) translateX(-264%)!important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.background-Inner-2 .introAbout.open {
+    opacity: 1;
+    visibility: visible;
+    transform: skewX(0) translate(-50%, -50%)!important;
+    transition: all 1s;
+}
+
+.background-Inner-2 .box-IntroWrapper {
+    transform: translateY(-300%) scale(0);
+    opacity: 0;
+    transition: all 2s;
+}
+
+.background-Inner-2 .box-IntroWrapper.open {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+    transition: all 2s;
+}
+
+.background-Inner-3 {
+    z-index: 3;
+    transform: translateY(-100%);
+    transition: all var(--duration-page-3);
+}
+.background-Inner-3.open {
+    transform: translateY(0);
+    transition: all var(--duration-page-3);
+}
+
+
+.introAbout .box-IntroWrapper .box-intro {
+    flex: 0;
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.introAbout .box-IntroWrapper .box-intro.slider {
+    flex: 0 0 100%;
+    max-height: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: all .5s;
+}
